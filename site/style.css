@@ -7,6 +7,11 @@ html {
 	min-width: 40ch;
 }
 
+a:active  {color: #faa;}
+a:hover   {background: #ffa;}
+a:link    {color: #aaf;}
+a:visited {color: #faf;}
+
 .msg {
 	border-color: #ccc;
 	border-width: 0.25ex;

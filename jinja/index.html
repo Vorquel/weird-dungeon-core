@@ -1,8 +1,11 @@
 {# index.html #}
 {% extends "base.html" %}
 {% block body %}
+  <h1 style="text-align:center">{{ title }}</h1>
+  <p style="text-align:center">
   {% for chapter in chapters %}
     <a href={{ chapter }}>Chapter {{ loop.index }}</a>
     <br>
   {% endfor %}
+  </p>
 {% endblock %}

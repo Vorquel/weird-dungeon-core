@@ -3,6 +3,8 @@ from itertools import count
 from os.path import isfile
 from jinja2 import Environment, FileSystemLoader
 
+TITLE = "The Weird Dungeon Core, by Vorquel"
+
 @dataclass
 class Block:
     _ = KW_ONLY
@@ -24,7 +26,11 @@ def main():
         with open(filename) as file:
             parts = file.read().split("\n\n")
         chapters[f"chapter-1.html"] = parts
-    print(f"{chapters!r}")
+    with open("site/index.html", "w") as file:
+        file.write(home.render(
+            chapters=[*chapters],
+            title=TITLE,
+        ))
 
 if __name__ == "__main__":
     main()

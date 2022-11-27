@@ -1,0 +1,24 @@
+{# chapter.html -#}
+{% extends "base.html" -%}
+{%- macro span(text, href, align) -%}
+  <span style="text-align={{ align }}"><a href="{{ href }}">{{ text }}</a></span>
+{%- endmacro -%}
+{% block body -%}
+  {{ span("Prev", prev, "left") -}}
+  {{ span("Home", "index.html", "center") -}}
+  {{ span("Next", next, "right") -}}
+  {% for part in parts -%}
+    {% if part == "---" -%}
+      <hr>
+    {% else -%}
+      <p class="{{ part.cls }}">
+      {%- for line in part.lines -%}
+        {{ line }}
+        {% if !loop.last -%}
+          <br>
+        {% endif -%}
+      {% endfor -%}
+      </p>
+    {% endif -%}
+  {% endfor -%}
+{% endblock -%}

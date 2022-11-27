@@ -1,0 +1,20 @@
+html {
+	color: #eee;
+	background-color: #111;
+	text-align: start;
+	width: auto;
+	max-width: 200ch;
+	min-width: 40ch;
+}
+
+.msg {
+	border-color: #ccc;
+	border-width: 0.25ex;
+	background-color: #369;
+	text-align: center;
+	width: 75%;
+	max-width: 150ch;
+	min-width: 30ch;
+}
+
+.txt {}

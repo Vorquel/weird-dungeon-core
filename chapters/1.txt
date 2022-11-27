@@ -2,6 +2,7 @@ Choose a species
 
 I awake to those words in my field of vision. Which is odd, because I don't remember going to sleep. Nor do I remember being disembodied in a featureless void. I guess I died or something? Huh, I thought I would care more about that. Oh well.
 
+.msg
 Human
 Elf
 Dwarf
@@ -10,22 +11,26 @@ Beastkin
 
 The list starts with some normal humanoid fantasy races. I already did the human thing, so that's out. I don't know enough about anything else's culture or characteristics to pick anything else too similar.
 
+.msg
 angel
 demon
 horror
 
 I have an inkling of what those are, but I don't trust the instincts that would come with those. Being forced to protect righteousness sounds like it would get old fast, but I don't want to become somewhere's apocalypse either.
 
+.msg
 dungeon core
 
 Dig a hole, gather power and materials, no strong instincts beyond self-preservation. Yeah, this'll work.
 
+.msg
 dungeon core selected. prepare for rebirth.
 
 I fall asleep again.
 
 ---
 
+.msg
 Rebirth complete. Good luck with your new life.
 
 Ok, so I guess I'm a pearl now. A harder gem would have been nice. Blue boxes should mean there is a system, right? Status! ... Menu! ... Help? ... Guess it's not that kind of system. At least I know how to eat and breathe. Cycle mana in and out. Absorb dirt. Keep good stuff. Expel the bad stuff. Oh neat, the dirt came out as a perfect cube. What is this, Minecraft? I can't really identify what I ate. Um, iron ore, maybe? I expel it to see if I can identify it by sight. That's a much smaller cube. Heavy, shiny, grayish-silver. I have no idea what this is. Reabsorb! I have no idea what I'm eating, but it sure is fun to do. Can I move my own body? ... Nope. Can I absorb directly underneath myself? That works. What about at an angle? rolling down slopes works. also that didn't hurt when I hit the bottom, so either I'm really small, or I'm more durable than I thought. What about going up? Expelling directly underneath myself seems to work. Free movement is totally possible. There doesn't seem to be any "area control" thing going on either. This is gonna be fun.

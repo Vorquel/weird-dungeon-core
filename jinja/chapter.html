@@ -1,7 +1,7 @@
 {# chapter.html #}
 {% extends "base.html" %}
 {% macro span(text, href, align) %}
-  <span style="text-align={{ align }}"><a href="{{ href }}">{{ text }}</a></span>
+  <span style="text-align:{{ align }}"><a href="{{ href }}">{{ text }}</a></span>
 {% endmacro %}
 {% block body %}
   {{ span("Prev", prev, "left") }}

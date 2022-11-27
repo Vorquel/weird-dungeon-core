@@ -1,8 +1,8 @@
-{# index.html -#}
+{# index.html #}
 {% extends "base.html" %}
 {% block body %}
-{% for chapter in chapters %}
-<a href={{ chapter }}>Chapter {{ loop.index }}</a>
-<br>
-{% endfor %}
+  {% for chapter in chapters %}
+    <a href={{ chapter }}>Chapter {{ loop.index }}</a>
+    <br>
+  {% endfor %}
 {% endblock %}

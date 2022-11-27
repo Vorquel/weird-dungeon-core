@@ -40,7 +40,7 @@ def main():
             break
         with open(filename) as file:
             parts = file.read().split("\n\n")
-        chapters[f"chapter-1.html"] = from_parts(parts)
+        chapters[f"chapter-{index}.html"] = from_parts(parts)
     with open("site/index.html", "w") as file:
         file.write(home.render(
             chapters=[*chapters],

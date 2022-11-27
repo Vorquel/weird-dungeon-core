@@ -1,25 +1,26 @@
-html {
-	color: #eee;
-	background-color: #111;
-	text-align: start;
-	width: auto;
-	max-width: 200ch;
-	min-width: 40ch;
+body {
+	background-color: #222;
+	color: #ccc;
+	margin: auto;
+	max-width: 80ch;
 }
 
 a:active  {color: #faa;}
-a:hover   {background: #ffa;}
+a:hover   {background-color: #ffa;}
 a:link    {color: #aaf;}
 a:visited {color: #faf;}
 
 .msg {
-	border-color: #ccc;
-	border-width: 0.25ex;
 	background-color: #369;
+	border-radius: 1ex;
+	margin: auto;
+	outline-width: 0.25ex;
+	outline-style: solid;
+	padding: 1ex;
 	text-align: center;
-	width: 75%;
-	max-width: 150ch;
-	min-width: 30ch;
+	width: fit-content;
 }
 
-.txt {}
+.txt {
+	text-align: start;
+}

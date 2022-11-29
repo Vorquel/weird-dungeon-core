@@ -1,60 +1,47 @@
-from dataclasses import KW_ONLY, dataclass, field
 from itertools import count
-from os.path import isfile
 from jinja2 import Environment, FileSystemLoader
 
+INDEX = "index.html"
 TITLE = "The Weird Dungeon Core, by Vorquel"
 
-@dataclass
-class Block:
-    _ = KW_ONLY
-    cls: str = "txt"
-    lines: list[str] = field(default_factory=list)
-
-def from_parts(parts):
-    out = []
-    for part in parts:
-        if part == "---":
-            out.append("<hr>")
-            continue
-        block = Block()
-        lines = part.split('\n')
-        if lines[0][0] == ".":
-            (cls, *lines) = lines
-            block.cls = cls[1:]
-        block.lines = lines
-        out.append(block)
-    return out
+def get_chapters():
+    chaps = [{"link":INDEX}]
+    try:
+        for index in count(1):
+            with open(f"chapters/{index}.txt") as file:
+                file = file.read()
+            chaps[-1]["next"] = f"chapter-{index}.html"
+            chaps.append({
+                "title": TITLE,
+                "home": INDEX,
+                "prev": chaps[-1]["link"],
+                "link": chaps[-1]["next"],
+                "next": INDEX,
+                "text": [("<hr>" if split == "---" else {
+                    "lines": (lines := split.split("\n"))[(split[0] == "."):],
+                    "class": (lines[0][1:] if split[0] == "." else "txt"),
+                }) for split in file.split("\n\n")],
+            })
+    except OSError:
+        pass
+    return chaps[1:]
 
 def main():
     env = Environment(
         keep_trailing_newline=True,
         loader=FileSystemLoader("jinja/"),
     )
-    home = env.get_template("index.html")
-    chap = env.get_template("chapter.html")
-    chapters = {}
-    for index in count(1):
-        filename = f"chapters/{index}.txt"
-        if not isfile(filename):
-            break
-        with open(filename) as file:
-            parts = file.read().split("\n\n")
-        chapters[f"chapter-{index}.html"] = from_parts(parts)
+    home_tmpl = env.get_template(INDEX)
+    chap_tmpl = env.get_template("chapter.html")
+    chaps = get_chapters()
     with open("site/index.html", "w") as file:
-        file.write(home.render(
-            chapters=[*chapters],
+        file.write(home_tmpl.render(
+            chaps=[chap["link"] for chap in chaps],
             title=TITLE,
         ))
-    for key, parts in chapters.items():
-        with open(f"site/{key}", "w") as file:
-            file.write(chap.render(
-                chapters=[*chapters],
-                title=TITLE,
-                parts=parts,
-                prev="index.html",
-                next="index.html",
-            ))
+    for chap in chaps:
+        with open(f"site/{chap['link']}", "w") as file:
+            file.write(chap_tmpl.render(chap))
 
 if __name__ == "__main__":
     main()

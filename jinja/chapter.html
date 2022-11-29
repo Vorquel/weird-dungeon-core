@@ -5,11 +5,11 @@
 {% endmacro %}
 {% block body %}
   {{ nav() }}
-  {% for part in parts %}
+  {% for part in text %}
     {% if part is string %}
       {{ part }}
     {% else %}
-      <p class="{{ part.cls }}">
+      <p class="{{ part.class }}">
       {% for line in part.lines %}
         {{ line }}
         {% if not loop.last %}
